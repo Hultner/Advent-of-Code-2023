@@ -14,9 +14,9 @@ def main() -> None:
         # (day_04.part_1(), day_04.part_2()),
     )
 
-    for (day, parts) in enumerate(puzzles, start=1):
+    for day, parts in enumerate(puzzles, start=1):
         print(f"Day {day}:")
-        for (part, result) in enumerate(parts, start=1):
+        for part, result in enumerate(parts, start=1):
             print(f"\tPart {part}: {result}")
 
     return None

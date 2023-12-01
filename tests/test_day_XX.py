@@ -27,5 +27,5 @@ def test_samples() -> None:
     """
     examples = ((sample_seed_1, answers),)
 
-    for (data, expected) in examples:
+    for data, expected in examples:
         verify_day(data, *expected)
