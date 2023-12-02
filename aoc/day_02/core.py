@@ -60,6 +60,7 @@ from aoc.day_02.seed import p1
 
 colours = ("green", "red", "blue")
 
+
 def parse_set(set_string: str) -> dict[str, int]:
     """
     Input: 6 red, 1 blue, 3 green
@@ -73,14 +74,13 @@ def parse_set(set_string: str) -> dict[str, int]:
         set_string.strip().split(",")
     )
     cubes = {
-        colour.strip(): int(cube_count.strip())
-        for (cube_count, colour) in cube_strings
+        colour.strip(): int(cube_count.strip()) for (cube_count, colour) in cube_strings
     }
     return cubes
 
 
 def find_max_colours(acc: dict[str, int], item: dict[str, int]) -> dict[str, int]:
-    return { colour: max(acc[colour], item.get(colour, 0)) for colour in colours}
+    return {colour: max(acc[colour], item.get(colour, 0)) for colour in colours}
 
 
 def parse_game(game_string: str) -> dict:
@@ -105,16 +105,17 @@ def check_cube_constraints(
     game: dict[str, int],
 ) -> bool:
     return all(
-       cube_constraints[colour] >= game.get(colour, 0)
-       for colour in cube_constraints
+        cube_constraints[colour] >= game.get(colour, 0) for colour in cube_constraints
     )
 
 
 def find_valid_games(
-    cube_constraints: dict[str, int], games: list[dict],
+    cube_constraints: dict[str, int],
+    games: list[dict],
 ) -> list[dict[str, int]]:
     return [
-        game for game in games
+        game
+        for game in games
         if check_cube_constraints(cube_constraints, game["max_set"])
     ]
 

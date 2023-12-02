@@ -72,7 +72,9 @@ def construct_calibration_number(calibration_value: str) -> int:
 def replace_nums(initial_value: str) -> str:
     value = initial_value
     for spelled_digit, num_digit in replacements:
-        value = value.replace(spelled_digit, f"{spelled_digit[0]}{num_digit}{spelled_digit[-1]}")
+        value = value.replace(
+            spelled_digit, f"{spelled_digit[0]}{num_digit}{spelled_digit[-1]}"
+        )
     # breakpoint()
     return value
 
