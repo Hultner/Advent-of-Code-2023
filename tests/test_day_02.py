@@ -14,14 +14,14 @@ sample_seed_1 = (
 
 answers = (
     8,
-    0,
+    2286,
 )
 
 
 def test_parts() -> None:
     # Oracle says so
     assert part_1() == 2416
-    assert part_2() == 0
+    assert part_2() == 63307
 
 
 def verify_day(data: Any, expected_1: Any, expected_2: Any) -> None:
