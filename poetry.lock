@@ -301,25 +301,26 @@ wcwidth = ">=0.1.4"
 
 [[package]]
 name = "bpython"
-version = "0.20.1"
-description = "Fancy Interface to the Python Interpreter"
+version = "0.24"
+description = ""
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "bpython-0.20.1-py2.py3-none-any.whl", hash = "sha256:4eb55cb0b3e140f4ed548600d39c33acfee57b9117797a583b40ba56a8676772"},
-    {file = "bpython-0.20.1.tar.gz", hash = "sha256:6e7738806013b469be57b0117082b9c4557ed7c92c70ceb79f96d674d89c7503"},
+    {file = "bpython-0.24-py3-none-any.whl", hash = "sha256:0d196ae3d1ce3dcd559a3fb89ed2c468dfbd1504af0d680b906dd65a9c7a32eb"},
+    {file = "bpython-0.24.tar.gz", hash = "sha256:98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"},
 ]
 
 [package.dependencies]
-curtsies = ">=0.3.0"
+curtsies = ">=0.4.0"
+cwcwidth = "*"
 greenlet = "*"
 pygments = "*"
+pyxdg = "*"
 requests = "*"
-six = ">=1.5"
-wcwidth = "*"
 
 [package.extras]
-jedi = ["jedi"]
+clipboard = ["pyperclip"]
+jedi = ["jedi (>=0.16)"]
 urwid = ["urwid"]
 watch = ["watchdog"]
 
@@ -2164,6 +2165,17 @@ files = [
 ]
 
 [[package]]
+name = "pyxdg"
+version = "0.28"
+description = "PyXDG contains implementations of freedesktop.org standards in python."
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyxdg-0.28-py2.py3-none-any.whl", hash = "sha256:bdaf595999a0178ecea4052b7f4195569c1ff4d344567bccdc12dfdf02d545ab"},
+    {file = "pyxdg-0.28.tar.gz", hash = "sha256:3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"},
+]
+
+[[package]]
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
@@ -2784,4 +2796,4 @@ test = ["websockets"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "c4f6fa7f252052a267acf6b2eba8358d96478f92749ebf571913bb5f836f893d"
+content-hash = "80f74988a83fbefb998da7dd815ddaac9eb667824d3a5fc0b42fd159c724a5de"
