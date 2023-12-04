@@ -2,18 +2,28 @@ from typing import Any
 
 from aoc.day_03.core import part_1, part_2
 
-sample_seed_1 = (1,)
+sample_seed_1 = """467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598..
+"""
 
 answers = (
-    0,
-    0,
+    4361,
+    467835,
 )
 
 
 def test_parts() -> None:
     # Oracle says so
-    assert part_1() == 0
-    assert part_2() == 0
+    assert part_1() == 521601
+    assert part_2() == 80694070
 
 
 def verify_day(data: Any, expected_1: Any, expected_2: Any) -> None:
