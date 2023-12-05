@@ -168,6 +168,7 @@ def part_2(puzzle_input: str = p1) -> int:
     gears = (
         mul(*cogs)
         for gear in symbol_gen
-        if gear.value == "*" and len(cogs := [cog.value for cog in numbers if is_adjacent(cog, gear)]) == 2
+        if gear.value == "*"
+        and len(cogs := [cog.value for cog in numbers if is_adjacent(cog, gear)]) == 2
     )
     return sum(gears)

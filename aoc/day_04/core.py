@@ -19,13 +19,11 @@ def parse(raw_str: str) -> Iterator[Card]:
     for line in raw_str.splitlines():
         for match in re.findall(pattern, line):
             # Just to make sure double winnings isn't possible
-            assert (
-                len(set(int(v) for v in match[3].split())) ==
-                len(list(int(v) for v in match[3].split()))
+            assert len(set(int(v) for v in match[3].split())) == len(
+                list(int(v) for v in match[3].split())
             )
-            assert (
-                len(set(int(v) for v in match[1].split())) ==
-                len(list(int(v) for v in match[1].split()))
+            assert len(set(int(v) for v in match[1].split())) == len(
+                list(int(v) for v in match[1].split())
             )
             yield Card(
                 int(match[0]),
@@ -38,9 +36,9 @@ def part_1(puzzle_input: str = p1) -> int:
     """"""
     cards = parse(puzzle_input)
     return sum(
-            2**(exp-1)
-            for card in cards
-            if (exp := len(card.winning_numbers & card.card_numbers)) > 0
+        2 ** (exp - 1)
+        for card in cards
+        if (exp := len(card.winning_numbers & card.card_numbers)) > 0
     )
 
 
@@ -49,5 +47,5 @@ def part_2(puzzle_input: str = p1) -> int:
     cards = list(parse(puzzle_input))
     for card in cards:
         winners = card.winning_numbers & card.card_numbers
-        cards += cards[card.id: card.id+len(winners)]
+        cards += cards[card.id : card.id + len(winners)]
     return len(cards)
